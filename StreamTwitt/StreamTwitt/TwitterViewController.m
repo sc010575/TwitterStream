@@ -11,14 +11,16 @@
 #import <Social/Social.h>
 #import "TwitterStreamService.h"
 #import "TwittTableViewCell.h"
+#import "TwittUtil.h"
 
 
-@interface TwitterViewController ()<UITableViewDataSource, UITableViewDelegate,TwitterSreamServiceDelegate>
+@interface TwitterViewController ()<UITableViewDataSource, UITableViewDelegate,TwitterSreamServiceDelegate,UISearchDisplayDelegate, UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *twittTableView;
 @property (strong, nonatomic) NSMutableArray *dataSource;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *busyIndecator;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic)TwitterStreamService *twitterService;
 @end
 
@@ -27,10 +29,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   //  [self setupRefreshControl]; //Not fully implemented
-    [self setupTwitterService];
     self.dataSource = [NSMutableArray array];
     self.busyIndecator.tintColor = [UIColor grayColor];
     
+    self.searchBar.delegate = self;
+    self.searchBar.placeholder = @"Search for post";
+    self.searchBar.tintColor = [UIColor blueColor];
+    
+    [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil] setTitle:@"Search"];
 }
 
 - (void)setupRefreshControl
@@ -46,16 +52,16 @@
 }
 
 -(void)refresh {
-    [self setupTwitterService]; //calls [taskDone] when finished
+ //   [self setupTwitterService]; //calls [taskDone] when finished
 }
 
 -(void)taskDone {
     [self.refreshControl endRefreshing];
     [self.refreshControl removeFromSuperview];
 }
-- (void)setupTwitterService
+- (void)setupTwitterServiceWithText:(NSString*)string
 {
-    self.twitterService = [[TwitterStreamService alloc] initWithSearchString:@"Cricket" andNumberOfRequest:10 delegate:self];
+    self.twitterService = [[TwitterStreamService alloc] initWithSearchString:string andNumberOfRequest:10 delegate:self];
     [self.busyIndecator startAnimating];
 }
 
@@ -125,6 +131,46 @@
     [cell configureCellWithText:twittData[@"text"] name:twittData[@"name"] ];
     return cell;
 }
+
+
+#pragma mark - search display controller delegate
+- (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar
+{
+   
+    return YES;
+}
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    
+//    if(!searchText.length){
+//        [self checkForRecentSearch];
+//        return;
+//    }
+    
+}
+
+
+- (BOOL)searchBarShouldEndEditing:(UISearchBar *)searchBar
+{
+    return YES;
+}
+
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar
+{
+    if(![TwittUtil isEmptyString:searchBar.text]){
+        
+        [self setupTwitterServiceWithText:searchBar.text];
+        
+    }
+}
+
+- (void)searchWasCancelled
+{
+}
+
 
 
 @end
