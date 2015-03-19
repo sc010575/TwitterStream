@@ -111,7 +111,11 @@
         NSDictionary *userDict = object[@"user"];
    
         NSString * name = ([TwittUtil isEmptyString:userDict[@"name"]])? @"Twitter":userDict[@"name"];
-
+        NSString *imageUrl = userDict[@"profile_image_url"];
+        NSString *createdAt = userDict[@"created_at"];
+        NSString *backgroundColor = userDict[@"profile_background_color"];
+        NSString *url = userDict[@"url"];
+        NSString *description = userDict[@"description"];
         NSDictionary * twittDict = @{@"text":text,@"name":name};
         if([self.delegate respondsToSelector:@selector(twitterFeedAvailable:)])
         {

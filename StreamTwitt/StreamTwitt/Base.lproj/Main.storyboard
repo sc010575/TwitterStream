@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wE4-bW-lWj">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="213" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="wE4-bW-lWj">
                                 <rect key="frame" x="0.0" y="20" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <searchBar key="tableHeaderView" contentMode="redraw" showsCancelButton="YES" id="z6i-5L-Vhj">
@@ -26,22 +26,22 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwittTableViewCell" rowHeight="80" id="dqu-qT-eUX" customClass="TwittTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwittTableViewCell" rowHeight="213" id="dqu-qT-eUX" customClass="TwittTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dqu-qT-eUX" id="gXi-kb-lOm">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7l-c8-DeF">
-                                                    <rect key="frame" x="45" y="51" width="500" height="21"/>
+                                                    <rect key="frame" x="45" y="157" width="500" height="21.5"/>
                                                     <fontDescription key="fontDescription" name="STHeitiTC-Medium" family="Heiti TC" pointSize="17"/>
                                                     <color key="textColor" red="0.2838459176" green="0.64361897069999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitt Description" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM5-TB-TDk">
-                                                    <rect key="frame" x="8" y="8" width="568" height="44"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Twitt Description" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM5-TB-TDk">
+                                                    <rect key="frame" x="8" y="8" width="568" height="90"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="44" id="eL1-o3-ziN"/>
+                                                        <constraint firstAttribute="height" constant="90" id="eL1-o3-ziN"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -52,10 +52,10 @@
                                                 <constraint firstItem="GM5-TB-TDk" firstAttribute="leading" secondItem="gXi-kb-lOm" secondAttribute="leadingMargin" id="LwJ-Kq-sEs"/>
                                                 <constraint firstItem="GM5-TB-TDk" firstAttribute="top" secondItem="gXi-kb-lOm" secondAttribute="topMargin" id="bzx-Eo-FD8"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="GM5-TB-TDk" secondAttribute="trailing" constant="16" id="dXS-9k-Kyc"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="h7l-c8-DeF" secondAttribute="bottom" constant="-0.5" id="j1V-7x-kYg"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="h7l-c8-DeF" secondAttribute="bottom" constant="26" id="j1V-7x-kYg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="h7l-c8-DeF" secondAttribute="trailing" constant="47" id="q8u-2u-Nz0"/>
                                                 <constraint firstItem="h7l-c8-DeF" firstAttribute="leading" secondItem="gXi-kb-lOm" secondAttribute="leadingMargin" constant="37" id="tq2-9q-3Wi"/>
-                                                <constraint firstItem="h7l-c8-DeF" firstAttribute="top" secondItem="gXi-kb-lOm" secondAttribute="topMargin" constant="43" id="zeG-nf-14D"/>
+                                                <constraint firstItem="h7l-c8-DeF" firstAttribute="top" secondItem="gXi-kb-lOm" secondAttribute="topMargin" constant="149" id="zeG-nf-14D"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
