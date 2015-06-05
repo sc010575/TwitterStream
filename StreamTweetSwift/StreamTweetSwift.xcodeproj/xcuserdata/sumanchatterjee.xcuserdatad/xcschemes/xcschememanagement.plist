@@ -4,30 +4,20 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>StreamTwitt.xcscheme</key>
+		<key>StreamTweetSwift.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
-		<key>StreamTwittTests.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C583E1011A404A1A00312ACD</key>
+		<key>C5E70B451B1CA297002AF72D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C583E11A1A404A1A00312ACD</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C5F4F8661AD045B4009DF95F</key>
+		<key>C5E70B5A1B1CA297002AF72D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

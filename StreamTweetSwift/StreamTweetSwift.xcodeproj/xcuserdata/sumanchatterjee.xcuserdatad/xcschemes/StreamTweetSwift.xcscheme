@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C583E1011A404A1A00312ACD"
-               BuildableName = "StreamTwitt.app"
-               BlueprintName = "StreamTwitt"
-               ReferencedContainer = "container:StreamTwitt.xcodeproj">
+               BlueprintIdentifier = "C5E70B451B1CA297002AF72D"
+               BuildableName = "StreamTweetSwift.app"
+               BlueprintName = "StreamTweetSwift"
+               ReferencedContainer = "container:StreamTweetSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,24 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C583E11A1A404A1A00312ACD"
-               BuildableName = "StreamTwittTests.xctest"
-               BlueprintName = "StreamTwittTests"
-               ReferencedContainer = "container:StreamTwitt.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5F4F8661AD045B4009DF95F"
-               BuildableName = "StreamTwittApplicationTests.xctest"
-               BlueprintName = "StreamTwittApplicationTests"
-               ReferencedContainer = "container:StreamTwitt.xcodeproj">
+               BlueprintIdentifier = "C5E70B5A1B1CA297002AF72D"
+               BuildableName = "StreamTweetSwiftTests.xctest"
+               BlueprintName = "StreamTweetSwiftTests"
+               ReferencedContainer = "container:StreamTweetSwift.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -60,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C5F4F8661AD045B4009DF95F"
-               BuildableName = "StreamTwittApplicationTests.xctest"
-               BlueprintName = "StreamTwittApplicationTests"
-               ReferencedContainer = "container:StreamTwitt.xcodeproj">
+               BlueprintIdentifier = "C5E70B5A1B1CA297002AF72D"
+               BuildableName = "StreamTweetSwiftTests.xctest"
+               BlueprintName = "StreamTweetSwiftTests"
+               ReferencedContainer = "container:StreamTweetSwift.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C583E1011A404A1A00312ACD"
-            BuildableName = "StreamTwitt.app"
-            BlueprintName = "StreamTwitt"
-            ReferencedContainer = "container:StreamTwitt.xcodeproj">
+            BlueprintIdentifier = "C5E70B451B1CA297002AF72D"
+            BuildableName = "StreamTweetSwift.app"
+            BlueprintName = "StreamTweetSwift"
+            ReferencedContainer = "container:StreamTweetSwift.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -90,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C583E1011A404A1A00312ACD"
-            BuildableName = "StreamTwitt.app"
-            BlueprintName = "StreamTwitt"
-            ReferencedContainer = "container:StreamTwitt.xcodeproj">
+            BlueprintIdentifier = "C5E70B451B1CA297002AF72D"
+            BuildableName = "StreamTweetSwift.app"
+            BlueprintName = "StreamTweetSwift"
+            ReferencedContainer = "container:StreamTweetSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -109,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C583E1011A404A1A00312ACD"
-            BuildableName = "StreamTwitt.app"
-            BlueprintName = "StreamTwitt"
-            ReferencedContainer = "container:StreamTwitt.xcodeproj">
+            BlueprintIdentifier = "C5E70B451B1CA297002AF72D"
+            BuildableName = "StreamTweetSwift.app"
+            BlueprintName = "StreamTweetSwift"
+            ReferencedContainer = "container:StreamTweetSwift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

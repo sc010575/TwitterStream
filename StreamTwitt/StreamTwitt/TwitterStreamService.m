@@ -40,16 +40,16 @@
     ACAccountType *accountType = [account
                                   accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
-    NSArray *accounts = [account accountsWithAccountType:accountType];
+//    NSArray *accounts = [account accountsWithAccountType:accountType];
     
-    if(accounts.count == 0)
-    {
-        if([self.delegate respondsToSelector:@selector(noTwitterAccountSetUp)])
-        {
-            [self.delegate noTwitterAccountSetUp];
-        }
-        return;
-    }
+//    if(accounts.count == 0)
+//    {
+//        if([self.delegate respondsToSelector:@selector(noTwitterAccountSetUp)])
+//        {
+//            [self.delegate noTwitterAccountSetUp];
+//        }
+//        return;
+//    }
     
     [account requestAccessToAccountsWithType:accountType
                                      options:nil completion:^(BOOL granted, NSError *error)

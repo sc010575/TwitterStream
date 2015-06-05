@@ -18,10 +18,18 @@
 		C583E1161A404A1A00312ACD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C583E1141A404A1A00312ACD /* LaunchScreen.xib */; };
 		C583E1221A404A1A00312ACD /* StreamTwittTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C583E1211A404A1A00312ACD /* StreamTwittTests.m */; };
 		C583E12C1A404B8200312ACD /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C583E12B1A404B8200312ACD /* Social.framework */; };
+		C5F4F86C1AD045B4009DF95F /* StreamTwittApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F4F86B1AD045B4009DF95F /* StreamTwittApplicationTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		C583E11C1A404A1A00312ACD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C583E0FA1A404A1A00312ACD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C583E1011A404A1A00312ACD;
+			remoteInfo = StreamTwitt;
+		};
+		C5F4F86D1AD045B4009DF95F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C583E0FA1A404A1A00312ACD /* Project object */;
 			proxyType = 1;
@@ -51,6 +59,9 @@
 		C583E1201A404A1A00312ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C583E1211A404A1A00312ACD /* StreamTwittTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreamTwittTests.m; sourceTree = "<group>"; };
 		C583E12B1A404B8200312ACD /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		C5F4F8671AD045B4009DF95F /* StreamTwittApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamTwittApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5F4F86A1AD045B4009DF95F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5F4F86B1AD045B4009DF95F /* StreamTwittApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StreamTwittApplicationTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +74,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C583E1181A404A1A00312ACD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5F4F8641AD045B4009DF95F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -103,6 +121,7 @@
 		C583E0F91A404A1A00312ACD = {
 			isa = PBXGroup;
 			children = (
+				C5F4F8681AD045B4009DF95F /* StreamTwittApplicationTests */,
 				C5569DB81A40E2B600AFD4E6 /* Frameworks */,
 				C5569DB41A40BFC700AFD4E6 /* TwitterStream */,
 				C583E1041A404A1A00312ACD /* StreamTwitt */,
@@ -116,6 +135,7 @@
 			children = (
 				C583E1021A404A1A00312ACD /* StreamTwitt.app */,
 				C583E11B1A404A1A00312ACD /* StreamTwittTests.xctest */,
+				C5F4F8671AD045B4009DF95F /* StreamTwittApplicationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,6 +182,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C5F4F8681AD045B4009DF95F /* StreamTwittApplicationTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5F4F86B1AD045B4009DF95F /* StreamTwittApplicationTests.m */,
+				C5F4F8691AD045B4009DF95F /* Supporting Files */,
+			);
+			path = StreamTwittApplicationTests;
+			sourceTree = "<group>";
+		};
+		C5F4F8691AD045B4009DF95F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5F4F86A1AD045B4009DF95F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -200,6 +237,24 @@
 			productReference = C583E11B1A404A1A00312ACD /* StreamTwittTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		C5F4F8661AD045B4009DF95F /* StreamTwittApplicationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5F4F8711AD045B4009DF95F /* Build configuration list for PBXNativeTarget "StreamTwittApplicationTests" */;
+			buildPhases = (
+				C5F4F8631AD045B4009DF95F /* Sources */,
+				C5F4F8641AD045B4009DF95F /* Frameworks */,
+				C5F4F8651AD045B4009DF95F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5F4F86E1AD045B4009DF95F /* PBXTargetDependency */,
+			);
+			name = StreamTwittApplicationTests;
+			productName = StreamTwittApplicationTests;
+			productReference = C5F4F8671AD045B4009DF95F /* StreamTwittApplicationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -214,6 +269,10 @@
 					};
 					C583E11A1A404A1A00312ACD = {
 						CreatedOnToolsVersion = 6.1;
+						TestTargetID = C583E1011A404A1A00312ACD;
+					};
+					C5F4F8661AD045B4009DF95F = {
+						CreatedOnToolsVersion = 6.2;
 						TestTargetID = C583E1011A404A1A00312ACD;
 					};
 				};
@@ -233,6 +292,7 @@
 			targets = (
 				C583E1011A404A1A00312ACD /* StreamTwitt */,
 				C583E11A1A404A1A00312ACD /* StreamTwittTests */,
+				C5F4F8661AD045B4009DF95F /* StreamTwittApplicationTests */,
 			);
 		};
 /* End PBXProject section */
@@ -249,6 +309,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C583E1191A404A1A00312ACD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5F4F8651AD045B4009DF95F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,6 +346,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C5F4F8631AD045B4009DF95F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5F4F86C1AD045B4009DF95F /* StreamTwittApplicationTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -286,6 +361,11 @@
 			isa = PBXTargetDependency;
 			target = C583E1011A404A1A00312ACD /* StreamTwitt */;
 			targetProxy = C583E11C1A404A1A00312ACD /* PBXContainerItemProxy */;
+		};
+		C5F4F86E1AD045B4009DF95F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C583E1011A404A1A00312ACD /* StreamTwitt */;
+			targetProxy = C5F4F86D1AD045B4009DF95F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -441,6 +521,43 @@
 			};
 			name = Release;
 		};
+		C5F4F86F1AD045B4009DF95F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StreamTwittApplicationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamTwitt.app/StreamTwitt";
+			};
+			name = Debug;
+		};
+		C5F4F8701AD045B4009DF95F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = StreamTwittApplicationTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamTwitt.app/StreamTwitt";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -470,6 +587,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		C5F4F8711AD045B4009DF95F /* Build configuration list for PBXNativeTarget "StreamTwittApplicationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5F4F86F1AD045B4009DF95F /* Debug */,
+				C5F4F8701AD045B4009DF95F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
