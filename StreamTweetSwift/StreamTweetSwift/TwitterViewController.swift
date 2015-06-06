@@ -104,6 +104,10 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
         twitterStreamService  = TwitterStreamService(text:textSearch , numberOfRecords: 10, delegate: self)
         self.busyIndecator.startAnimating()
         }
+        else{
+            self.showErroMessage("Please enter a search string", messageTitle: "Error")
+
+        }
     }
     
     
@@ -130,20 +134,25 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     func twitterStreamServiceError() {
         println("Here is a Protocal")
         self.busyIndecator.stopAnimating()
+        self.showErroMessage("Some error", messageTitle: "Error")
+
         
     }
     
     func noTwitterAccountSetUp(){
         println("Here is a Protocal")
         
+        self.busyIndecator.stopAnimating()
+        self.showErroMessage("Please ge to the settings and set up a Twitter account", messageTitle:"Twitter" )
         
+    }
+    
+    func showErroMessage(text : String, messageTitle: String)
+    {
         dispatch_async(dispatch_get_main_queue(), {
-            self.busyIndecator.stopAnimating()
-            
-            let alert = UIAlertController(title: "Twitter", message: "Please ge to the settings and set up a Twitter account", preferredStyle: .Alert)
+            let alert = UIAlertController(title: messageTitle, message: text, preferredStyle: .Alert)
             // Create the action.
             let cancelAction = UIAlertAction(title: "Ok", style: .Cancel) { action in
-                NSLog("The simple alert's cancel action occured.")
             }
             
             // Add the action.
@@ -151,6 +160,7 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
             self.presentViewController(alert, animated: true, completion: nil)
             
         })
+
     }
 }
 
