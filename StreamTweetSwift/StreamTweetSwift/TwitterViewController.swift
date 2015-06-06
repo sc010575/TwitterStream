@@ -30,11 +30,11 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
         self.twittSearchBar.delegate = self
         self.twittSearchBar.placeholder = "Search for Tweets"
         self.twittSearchBar.tintColor = UIColor.blueColor()
-        
+    //    self.twittSearchBar.setValue("Search", forKey: "cancelButton")
 
     }
     
-       
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -71,6 +71,10 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     // MARK: UISearchBarDelegate
     func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
         searchActive = true;
+        searchBar.showsCancelButton = true
+        let uiButton = self.twittSearchBar.valueForKey("cancelButton") as! UIButton
+        uiButton.setTitle("Done", forState: UIControlState.Normal)
+
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
@@ -90,18 +94,21 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     
     func setupTwitterServiceWithText(textSearch: String)
     {
+        if (!textSearch.isEmpty){
+        
         if (self.twitterStreamService != nil)
         {
             twitterStreamService = nil
         }
-        
+        self.twittSearchBar.resignFirstResponder()
         twitterStreamService  = TwitterStreamService(text:textSearch , numberOfRecords: 10, delegate: self)
         self.busyIndecator.startAnimating()
+        }
     }
     
     
     // MARK: TwitterSreamServiceDelegate
-    
+        
     func twitterFeedAvailable(twitterData:NSDictionary) {
         println("Here is a feedAvailable")
         self.dataSource.append(twitterData as! [String : String])

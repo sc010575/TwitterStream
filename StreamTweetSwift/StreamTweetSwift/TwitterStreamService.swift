@@ -107,7 +107,6 @@ class TwitterStreamService: NSObject {
         var error = NSError?()
         if let object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? NSDictionary{
             let text = object["text"] as! String
-            
             let userDict =  object["user"] as! NSDictionary
             let name = userDict["name"] as! String
             var twittDict:NSDictionary = ["text":text, "name":name]
