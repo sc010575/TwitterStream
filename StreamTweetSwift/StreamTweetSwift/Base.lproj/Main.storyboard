@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="so0-ee-tEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-177" y="361"/>
+            <point key="canvasLocation" x="-421" y="45"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="Tmn-Ip-CZn">
@@ -83,6 +83,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="uWd-Np-933" id="Dnj-l1-9jC"/>
                                             <outlet property="twittLabel" destination="SVo-fq-egW" id="uFF-YH-T2l"/>
+                                            <segue destination="1Ve-IA-t1W" kind="show" id="cV8-bd-zQ9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -114,7 +115,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koQ-QN-YWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="722" y="372"/>
+            <point key="canvasLocation" x="298" y="380"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="zjc-Ke-ZEi">
+            <objects>
+                <viewController id="1Ve-IA-t1W" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NmG-ZS-4Lm"/>
+                        <viewControllerLayoutGuide type="bottom" id="FSj-6S-xsn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rnL-O3-5Py">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y45-l3-akH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155" y="-279"/>
         </scene>
     </scenes>
 </document>

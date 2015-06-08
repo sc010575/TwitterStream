@@ -9,5 +9,8 @@
 #ifndef StreamTweetSwift_StreamTweetSwift_Bridging_Header_h
 #define StreamTweetSwift_StreamTweetSwift_Bridging_Header_h
 
+#import "NSManagedObjectContext+Helper.h"
+#import "NSManagedObject+CoreDataHandler.h"
+#import "CoreDataErrorHandling.h"
 
 #endif

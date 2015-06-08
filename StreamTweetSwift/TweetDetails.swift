@@ -11,10 +11,10 @@ import CoreData
 
 class TweetDetails: NSManagedObject {
 
-    @NSManaged var imageURL: String
-    @NSManaged var createdAt: String
-    @NSManaged var tweetDescription: String
-    @NSManaged var twittURL: String
-    @NSManaged var name: String
+    @NSManaged var imageURL: String?
+    @NSManaged var createdAt: String?
+    @NSManaged var tweetDescription: String?
+    @NSManaged var twittURL: String?
+    @NSManaged var name: String?
 
 }

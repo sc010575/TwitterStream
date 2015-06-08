@@ -17,13 +17,21 @@ class TwitterStreamService: NSObject {
     var text:String
     var numberOfRecords:NSInteger
     var counter:Int = 0
+    var managedObjectContext:NSManagedObjectContext
     
     init( text:String, numberOfRecords:Int, delegate:TwitterSreamServiceDelegate)
     {
         self.delegate = delegate
         self.text = text
         self.numberOfRecords = numberOfRecords
-        super.init()
+        //Use the main persistentStoreCoordinator
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let storeCoOrdinator:NSPersistentStoreCoordinator = appDelegate.getStoreCoOrdinator()
+
+        
+        self.managedObjectContext = NSManagedObjectContext(storeCoordinator: storeCoOrdinator)
+        
+         super.init()
         
         self.getTwitterStream(self.text)
         
@@ -108,10 +116,24 @@ class TwitterStreamService: NSObject {
         if let object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? NSDictionary{
             let text = object["text"] as! String
             let userDict =  object["user"] as! NSDictionary
+            
+            println("Dictionary :\(userDict)")
+            
+            let imageUrl =  userDict["profile_banner_url"] as? String
+            let creationDate = userDict["created_at"] as? String
             let name = userDict["name"] as! String
+            let url =  userDict["url"] as? String
+            let description = userDict["description"] as? String
+            
             var twittDict:NSDictionary = ["text":text, "name":name]
             delegate?.twitterFeedAvailable(twittDict)
             self.counter++
+            
+            
+            
+            //Save Data
+            
+            self.saveTwitterRecord(self.managedObjectContext,name: name,imageUrl: imageUrl,createdOn: creationDate!,description: description,tweetURL: url)
             
             if self.counter >= self.numberOfRecords{
                 delegate?.twitterFeedLoadFinished()
@@ -119,11 +141,35 @@ class TwitterStreamService: NSObject {
                 self.counter = 0
             }
         }
-        
-        
     }
     
-    
+        func saveTwitterRecord(context:NSManagedObjectContext, name:String, imageUrl:String?,createdOn:String, description:String?, tweetURL:String?)
+        {
+            self.managedObjectContext.updateOnBackgroundThread({ (updateContext:NSManagedObjectContext!) -> Void in
+
+                var tweetdetails = NSEntityDescription.insertNewObjectForEntityForName("TweetDetails", inManagedObjectContext: updateContext) as? TweetDetails
+                
+
+                
+              //  var tweetdetails = TweetDetails.createInContext(updateContext) as! TweetDetails
+                
+                tweetdetails?.name = name
+                tweetdetails?.tweetDescription = description
+                
+         //       var dateFormatter = NSDateFormatter()
+         //       dateFormatter.dateFormat = "EEE MMM dd HH:mm:ss Z yyyy"
+                
+         //       var date = dateFormatter.dateFromString(createdOn)
+                tweetdetails?.createdAt = createdOn
+                tweetdetails?.twittURL = tweetURL
+                tweetdetails?.imageURL = imageUrl
+
+                }, completion: {
+                    NSLog("Save Data success")
+            })
+            
+    }
+
 }
 
 
