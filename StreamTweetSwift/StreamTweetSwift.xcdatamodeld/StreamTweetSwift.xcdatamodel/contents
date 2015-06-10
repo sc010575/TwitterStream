@@ -4,10 +4,11 @@
         <attribute name="createdAt" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tweet" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tweetDescription" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="twittURL" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="TweetDetails" positionX="-153" positionY="-3123" width="128" height="118"/>
+        <element name="TweetDetails" positionX="-153" positionY="-3123" width="128" height="135"/>
     </elements>
 </model>

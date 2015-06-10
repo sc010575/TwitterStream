@@ -19,7 +19,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="so0-ee-tEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-421" y="45"/>
+            <point key="canvasLocation" x="-1565" y="-2219"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="Tmn-Ip-CZn">
@@ -83,7 +83,7 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="uWd-Np-933" id="Dnj-l1-9jC"/>
                                             <outlet property="twittLabel" destination="SVo-fq-egW" id="uFF-YH-T2l"/>
-                                            <segue destination="1Ve-IA-t1W" kind="show" id="cV8-bd-zQ9"/>
+                                            <segue destination="1Ve-IA-t1W" kind="show" identifier="twittDetailsIdentifire" id="cV8-bd-zQ9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -115,12 +115,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koQ-QN-YWs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="298" y="380"/>
+            <point key="canvasLocation" x="-766" y="-2212"/>
         </scene>
-        <!--View Controller-->
+        <!--Tweet Details-->
         <scene sceneID="zjc-Ke-ZEi">
             <objects>
-                <viewController id="1Ve-IA-t1W" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TwitterDetailViewController" title="Tweet Details" id="1Ve-IA-t1W" customClass="TwitterDetailViewController" customModule="StreamTweetSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NmG-ZS-4Lm"/>
                         <viewControllerLayoutGuide type="bottom" id="FSj-6S-xsn"/>
@@ -128,12 +128,91 @@
                     <view key="view" contentMode="scaleToFill" id="rnL-O3-5Py">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2h-uV-OuJ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99K-G9-B7e">
+                                        <rect key="frame" x="10" y="180" width="580" height="100"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="fkz-ZK-HcT"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyx-Do-1CT">
+                                        <rect key="frame" x="10" y="320" width="580" height="180"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="ckS-CS-KDy"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyT-4I-NGB">
+                                        <rect key="frame" x="180" y="66" width="240" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="NHI-ue-MlC"/>
+                                            <constraint firstAttribute="height" constant="106" id="a8t-Zs-bwQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet posted by Suman Chatterjee" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="foD-Hg-CPn">
+                                        <rect key="frame" x="10" y="10" width="580" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="pJP-b6-3qV"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="QtI-7D-wwZ">
+                                        <rect key="frame" x="290" y="109" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="99K-G9-B7e" firstAttribute="top" secondItem="v2h-uV-OuJ" secondAttribute="top" constant="180" id="2zr-dT-Tj4"/>
+                                    <constraint firstItem="foD-Hg-CPn" firstAttribute="top" secondItem="v2h-uV-OuJ" secondAttribute="top" constant="10" id="4aH-Lp-MAv"/>
+                                    <constraint firstItem="QtI-7D-wwZ" firstAttribute="centerY" secondItem="cyT-4I-NGB" secondAttribute="centerY" id="AXY-uI-9Xt"/>
+                                    <constraint firstAttribute="bottom" secondItem="99K-G9-B7e" secondAttribute="bottom" constant="420" id="FCI-cT-AUL"/>
+                                    <constraint firstAttribute="centerX" secondItem="cyT-4I-NGB" secondAttribute="centerX" id="GZV-hQ-OAA"/>
+                                    <constraint firstItem="cyT-4I-NGB" firstAttribute="top" secondItem="foD-Hg-CPn" secondAttribute="bottom" constant="10" id="HvI-mX-D9m"/>
+                                    <constraint firstAttribute="centerX" secondItem="99K-G9-B7e" secondAttribute="centerX" id="Jjj-eR-ZAR"/>
+                                    <constraint firstItem="kyx-Do-1CT" firstAttribute="top" secondItem="99K-G9-B7e" secondAttribute="bottom" constant="40" id="Mdh-Rc-RRF"/>
+                                    <constraint firstItem="kyx-Do-1CT" firstAttribute="width" secondItem="99K-G9-B7e" secondAttribute="width" id="PNp-oV-Wce"/>
+                                    <constraint firstAttribute="centerX" secondItem="kyx-Do-1CT" secondAttribute="centerX" id="WIQ-1K-aG0"/>
+                                    <constraint firstAttribute="trailing" secondItem="99K-G9-B7e" secondAttribute="trailing" constant="10" id="em1-iP-cgQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="foD-Hg-CPn" secondAttribute="trailing" constant="10" id="hUD-Wq-URh"/>
+                                    <constraint firstItem="foD-Hg-CPn" firstAttribute="leading" secondItem="v2h-uV-OuJ" secondAttribute="leading" constant="10" id="oAb-Z6-25H"/>
+                                    <constraint firstItem="99K-G9-B7e" firstAttribute="leading" secondItem="v2h-uV-OuJ" secondAttribute="leading" constant="10" id="p7N-rc-mwV"/>
+                                    <constraint firstItem="99K-G9-B7e" firstAttribute="centerX" secondItem="v2h-uV-OuJ" secondAttribute="centerX" id="qqs-Cf-zah"/>
+                                    <constraint firstItem="99K-G9-B7e" firstAttribute="top" secondItem="cyT-4I-NGB" secondAttribute="bottom" constant="8" symbolic="YES" id="rG4-6S-QXp"/>
+                                    <constraint firstAttribute="centerX" secondItem="QtI-7D-wwZ" secondAttribute="centerX" id="rVi-JB-t0V"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="v2h-uV-OuJ" firstAttribute="leading" secondItem="rnL-O3-5Py" secondAttribute="leading" id="AVa-wF-nC8"/>
+                            <constraint firstItem="v2h-uV-OuJ" firstAttribute="bottom" secondItem="FSj-6S-xsn" secondAttribute="top" id="CgE-Zp-zeP"/>
+                            <constraint firstAttribute="trailing" secondItem="v2h-uV-OuJ" secondAttribute="trailing" id="KCY-fO-BTF"/>
+                            <constraint firstItem="v2h-uV-OuJ" firstAttribute="top" secondItem="rnL-O3-5Py" secondAttribute="top" id="NdZ-1D-Ufx"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="busyIndecator" destination="QtI-7D-wwZ" id="t91-z6-UcX"/>
+                        <outlet property="descriptionTextView" destination="kyx-Do-1CT" id="OBD-bz-raY"/>
+                        <outlet property="tweetDetailsTitle" destination="foD-Hg-CPn" id="YpV-od-d5o"/>
+                        <outlet property="tweetImage" destination="cyT-4I-NGB" id="YM9-nk-spm"/>
+                        <outlet property="tweetTextView" destination="99K-G9-B7e" id="Hrw-8b-haR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y45-l3-akH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="-279"/>
+            <point key="canvasLocation" x="342" y="-2191"/>
         </scene>
     </scenes>
 </document>

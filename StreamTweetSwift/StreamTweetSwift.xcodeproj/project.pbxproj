@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C53E752A1B1E16CE00683DBB /* TwitterSreamServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E75291B1E16CE00683DBB /* TwitterSreamServiceDelegate.swift */; };
 		C53E752F1B1F686B00683DBB /* TwitterViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E752E1B1F686B00683DBB /* TwitterViewCell.swift */; };
+		C54E5C4E1B273DA700E5D5CA /* TweetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C54E5C4D1B273DA700E5D5CA /* TweetDetails.swift */; };
 		C57DB1041B1DAE3200C1C730 /* TwitterStreamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C57DB1031B1DAE3200C1C730 /* TwitterStreamService.swift */; };
 		C57DB1071B1DE26900C1C730 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57DB1061B1DE26900C1C730 /* Social.framework */; };
 		C57DB1091B1DE27400C1C730 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C57DB1081B1DE27400C1C730 /* Accounts.framework */; };
@@ -17,7 +18,7 @@
 		C5CDC20A1B2305CC00DD60B6 /* CoreDataErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C5CDC2071B2305CC00DD60B6 /* CoreDataErrorHandling.m */; };
 		C5CDC20F1B235F0B00DD60B6 /* StreamTweetSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5CDC20D1B235F0B00DD60B6 /* StreamTweetSwift.xcdatamodeld */; };
 		C5CDC2161B23821800DD60B6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5CDC2151B23821800DD60B6 /* CoreData.framework */; };
-		C5CDC2231B25EAFE00DD60B6 /* TweetDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CDC2221B25EAFE00DD60B6 /* TweetDetails.swift */; };
+		C5CDC2251B26E5E500DD60B6 /* TwitterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CDC2241B26E5E500DD60B6 /* TwitterDetailViewController.swift */; };
 		C5E70B4C1B1CA297002AF72D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E70B4B1B1CA297002AF72D /* AppDelegate.swift */; };
 		C5E70B4E1B1CA297002AF72D /* TwitterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5E70B4D1B1CA297002AF72D /* TwitterViewController.swift */; };
 		C5E70B511B1CA297002AF72D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5E70B4F1B1CA297002AF72D /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		C53E75291B1E16CE00683DBB /* TwitterSreamServiceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterSreamServiceDelegate.swift; sourceTree = "<group>"; };
 		C53E752E1B1F686B00683DBB /* TwitterViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterViewCell.swift; sourceTree = "<group>"; };
+		C54E5C4D1B273DA700E5D5CA /* TweetDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetails.swift; sourceTree = "<group>"; };
 		C57DB1031B1DAE3200C1C730 /* TwitterStreamService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterStreamService.swift; sourceTree = "<group>"; };
 		C57DB1061B1DE26900C1C730 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C57DB1081B1DE27400C1C730 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -51,7 +53,7 @@
 		C5CDC20C1B230DDA00DD60B6 /* StreamTweetSwift-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "StreamTweetSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		C5CDC20E1B235F0B00DD60B6 /* StreamTweetSwift.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StreamTweetSwift.xcdatamodel; sourceTree = "<group>"; };
 		C5CDC2151B23821800DD60B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		C5CDC2221B25EAFE00DD60B6 /* TweetDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetails.swift; sourceTree = "<group>"; };
+		C5CDC2241B26E5E500DD60B6 /* TwitterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterDetailViewController.swift; sourceTree = "<group>"; };
 		C5E70B461B1CA297002AF72D /* StreamTweetSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamTweetSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5E70B4A1B1CA297002AF72D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5E70B4B1B1CA297002AF72D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,7 +138,7 @@
 		C5E70B3D1B1CA297002AF72D = {
 			isa = PBXGroup;
 			children = (
-				C5CDC2221B25EAFE00DD60B6 /* TweetDetails.swift */,
+				C54E5C4D1B273DA700E5D5CA /* TweetDetails.swift */,
 				C5CDC2171B23822600DD60B6 /* Framework */,
 				C5CDC20D1B235F0B00DD60B6 /* StreamTweetSwift.xcdatamodeld */,
 				C5E70B481B1CA297002AF72D /* StreamTweetSwift */,
@@ -163,6 +165,7 @@
 				C57DB1021B1DADE700C1C730 /* TwitterStream */,
 				C5E70B4B1B1CA297002AF72D /* AppDelegate.swift */,
 				C5E70B4D1B1CA297002AF72D /* TwitterViewController.swift */,
+				C5CDC2241B26E5E500DD60B6 /* TwitterDetailViewController.swift */,
 				C5E70B4F1B1CA297002AF72D /* Main.storyboard */,
 				C5E70B521B1CA297002AF72D /* Images.xcassets */,
 				C5E70B541B1CA297002AF72D /* LaunchScreen.xib */,
@@ -297,14 +300,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C53E752F1B1F686B00683DBB /* TwitterViewCell.swift in Sources */,
+				C54E5C4E1B273DA700E5D5CA /* TweetDetails.swift in Sources */,
 				C5CDC2091B2305CC00DD60B6 /* NSManagedObjectContext+Helper.m in Sources */,
-				C5CDC2231B25EAFE00DD60B6 /* TweetDetails.swift in Sources */,
 				C5E70B4E1B1CA297002AF72D /* TwitterViewController.swift in Sources */,
 				C53E752A1B1E16CE00683DBB /* TwitterSreamServiceDelegate.swift in Sources */,
 				C5CDC20A1B2305CC00DD60B6 /* CoreDataErrorHandling.m in Sources */,
 				C5CDC2081B2305CC00DD60B6 /* NSManagedObject+CoreDataHandler.m in Sources */,
 				C5CDC20F1B235F0B00DD60B6 /* StreamTweetSwift.xcdatamodeld in Sources */,
 				C5E70B4C1B1CA297002AF72D /* AppDelegate.swift in Sources */,
+				C5CDC2251B26E5E500DD60B6 /* TwitterDetailViewController.swift in Sources */,
 				C57DB1041B1DAE3200C1C730 /* TwitterStreamService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

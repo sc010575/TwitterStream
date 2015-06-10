@@ -14,11 +14,15 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     @IBOutlet weak var twittTableView: UITableView!
     @IBOutlet weak var busyIndecator:UIActivityIndicatorView!
     @IBOutlet weak var twittSearchBar:UISearchBar!
-
+    
     var dataSource: [[String:String]] = []
     var searchActive : Bool = false
     var twitterStreamService :TwitterStreamService!
     
+    
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder:aDecoder)
+    }
     
     
     override func viewDidLoad() {
@@ -26,11 +30,13 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
         
         twittTableView.delegate = self
         twittTableView.dataSource = self
-         self.busyIndecator.tintColor = UIColor .grayColor()
+        self.busyIndecator.tintColor = UIColor .grayColor()
         self.twittSearchBar.delegate = self
         self.twittSearchBar.placeholder = "Search for Tweets"
         self.twittSearchBar.tintColor = UIColor.blueColor()
     //    self.twittSearchBar.setValue("Search", forKey: "cancelButton")
+        
+        
 
     }
     
@@ -162,5 +168,25 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
         })
 
     }
+    
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "twittDetailsIdentifire"{
+            if let tweetDescriptionViewController = segue.destinationViewController as? TwitterDetailViewController{
+                let index = self.twittTableView.indexPathForSelectedRow()?.row
+                let twittDict = dataSource[index!] as [String : String]
+                let name = twittDict["name"]! as String
+                tweetDescriptionViewController.name = name
+            }
+            
+            
+        }
+    }
+
+
 }
 

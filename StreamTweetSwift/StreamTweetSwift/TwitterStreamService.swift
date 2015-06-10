@@ -24,11 +24,10 @@ class TwitterStreamService: NSObject {
         self.delegate = delegate
         self.text = text
         self.numberOfRecords = numberOfRecords
+
         //Use the main persistentStoreCoordinator
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let storeCoOrdinator:NSPersistentStoreCoordinator = appDelegate.getStoreCoOrdinator()
-
-        
         self.managedObjectContext = NSManagedObjectContext(storeCoordinator: storeCoOrdinator)
         
          super.init()
@@ -133,7 +132,7 @@ class TwitterStreamService: NSObject {
             
             //Save Data
             
-            self.saveTwitterRecord(self.managedObjectContext,name: name,imageUrl: imageUrl,createdOn: creationDate!,description: description,tweetURL: url)
+            self.saveTwitterRecord(self.managedObjectContext,name: name,imageUrl: imageUrl,createdOn: creationDate!,description: description,tweetURL: url , actualTweet:text)
             
             if self.counter >= self.numberOfRecords{
                 delegate?.twitterFeedLoadFinished()
@@ -143,7 +142,9 @@ class TwitterStreamService: NSObject {
         }
     }
     
-        func saveTwitterRecord(context:NSManagedObjectContext, name:String, imageUrl:String?,createdOn:String, description:String?, tweetURL:String?)
+    //MARK : - save database
+    //Save Data in the database
+    func saveTwitterRecord(context:NSManagedObjectContext, name:String, imageUrl:String?,createdOn:String, description:String?, tweetURL:String? , actualTweet:String?)
         {
             self.managedObjectContext.updateOnBackgroundThread({ (updateContext:NSManagedObjectContext!) -> Void in
 
@@ -163,6 +164,7 @@ class TwitterStreamService: NSObject {
                 tweetdetails?.createdAt = createdOn
                 tweetdetails?.twittURL = tweetURL
                 tweetdetails?.imageURL = imageUrl
+                tweetdetails?.tweet = actualTweet
 
                 }, completion: {
                     NSLog("Save Data success")
