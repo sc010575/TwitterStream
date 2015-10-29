@@ -7,22 +7,18 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F8890384-819D-441C-856C-1F4F3C332ED2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>StreamTwitt</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3CE5DE9BD1961A1274C66D4761E17EE63246E4F4</key>
 		<string>https://github.com/sc010575/TwitterStream.git</string>
-		<key>3F4840078BF326427A2F5DE83A7FEB6D4F78308D</key>
-		<string>https://github.com/sc010575/StreamTwitt.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>StreamTwitt/StreamTwitt.xcodeproj</string>
+	<string>StreamTwitt/StreamTwitt.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3CE5DE9BD1961A1274C66D4761E17EE63246E4F4</key>
 		<string>../../..</string>
-		<key>3F4840078BF326427A2F5DE83A7FEB6D4F78308D</key>
-		<string>../../../../StreamTwitt</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/sc010575/TwitterStream.git</string>
@@ -32,14 +28,6 @@
 	<string>3CE5DE9BD1961A1274C66D4761E17EE63246E4F4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
-		<dict>
-			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
-			<string>public.vcs.git</string>
-			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>3F4840078BF326427A2F5DE83A7FEB6D4F78308D</string>
-			<key>IDESourceControlWCCName</key>
-			<string>StreamTwitt</string>
-		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

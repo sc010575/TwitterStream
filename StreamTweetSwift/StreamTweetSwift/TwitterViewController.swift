@@ -21,7 +21,7 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)
+        super.init(coder:aDecoder)!
     }
     
     
@@ -89,12 +89,12 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false;
-        self.setupTwitterServiceWithText(searchBar.text)
+        self.setupTwitterServiceWithText(searchBar.text!)
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchActive = false;
-        self.setupTwitterServiceWithText(searchBar.text)
+        self.setupTwitterServiceWithText(searchBar.text!)
         
     }
     
@@ -120,7 +120,7 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     // MARK: TwitterSreamServiceDelegate
         
     func twitterFeedAvailable(twitterData:NSDictionary) {
-        println("Here is a feedAvailable")
+       print("Here is a feedAvailable")
         self.dataSource.append(twitterData as! [String : String])
         if self.dataSource.count != 0
         {
@@ -132,13 +132,13 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func twitterFeedLoadFinished() {
-        println("Here is a Finished")
+        print("Here is a Finished")
         self.busyIndecator.stopAnimating()
         
         
     }
     func twitterStreamServiceError() {
-        println("Here is a Protocal")
+        print("Here is a Protocal")
         self.busyIndecator.stopAnimating()
         self.showErroMessage("Some error", messageTitle: "Error")
 
@@ -146,7 +146,7 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func noTwitterAccountSetUp(){
-        println("Here is a Protocal")
+        print("Here is a Protocal")
         
         self.busyIndecator.stopAnimating()
         self.showErroMessage("Please ge to the settings and set up a Twitter account", messageTitle:"Twitter" )
@@ -177,8 +177,8 @@ class TwitterViewController:UIViewController,UITableViewDataSource,UITableViewDe
         
         if segue.identifier == "twittDetailsIdentifire"{
             if let tweetDescriptionViewController = segue.destinationViewController as? TwitterDetailViewController{
-                let index = self.twittTableView.indexPathForSelectedRow()?.row
-                let twittDict = dataSource[index!] as [String : String]
+                let index = self.twittTableView.indexPathForSelectedRow!.row
+                let twittDict = dataSource[index] as [String : String]
                 let name = twittDict["name"]! as String
                 tweetDescriptionViewController.name = name
             }

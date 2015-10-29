@@ -58,7 +58,7 @@ class TwitterStreamService: NSObject {
                 
                 if (twitterAccounts != nil) {
                     if twitterAccounts.count == 0 {
-                        println("There are no Twitter accounts configured. You can add or create a Twitter account in Settings.")
+                        print("There are no Twitter accounts configured. You can add or create a Twitter account in Settings.")
                         self.delegate?.noTwitterAccountSetUp!()
                         
                     }
@@ -93,7 +93,7 @@ class TwitterStreamService: NSObject {
     
     //NSURLConnection delegate method
     func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
-        println("Failed with error:\(error.localizedDescription)")
+        print("Failed with error:\(error.localizedDescription)")
     }
     
     //NSURLConnection delegate method
@@ -109,14 +109,15 @@ class TwitterStreamService: NSObject {
         //Dubug Purpose Only
         
         let dataString = NSString(data: data, encoding: NSUTF8StringEncoding)
-        println("Got Data string with :\(dataString)")
+        print("Got Data string with :\(dataString)")
         
-        var error = NSError?()
-        if let object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &error) as? NSDictionary{
+        do{
+            
+        if let object = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary{
             let text = object["text"] as! String
             let userDict =  object["user"] as! NSDictionary
             
-            println("Dictionary :\(userDict)")
+            print("Dictionary :\(userDict)")
             
             let imageUrl =  userDict["profile_banner_url"] as? String
             let creationDate = userDict["created_at"] as? String
@@ -124,7 +125,7 @@ class TwitterStreamService: NSObject {
             let url =  userDict["url"] as? String
             let description = userDict["description"] as? String
             
-            var twittDict:NSDictionary = ["text":text, "name":name]
+            let twittDict:NSDictionary = ["text":text, "name":name]
             delegate?.twitterFeedAvailable(twittDict)
             self.counter++
             
@@ -139,6 +140,9 @@ class TwitterStreamService: NSObject {
                 connection.cancel()
                 self.counter = 0
             }
+            }
+        }catch {
+            print("This is an Error")
         }
     }
     

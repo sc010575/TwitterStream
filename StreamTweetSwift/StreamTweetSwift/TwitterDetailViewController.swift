@@ -28,9 +28,10 @@ class TwitterDetailViewController: UIViewController {
         let predicate = NSPredicate(format: "name == %@", name)
         let fetchRequest = NSFetchRequest(entityName: "TweetDetails")
         fetchRequest.predicate = predicate
-        
-        if let tweetDetails =  managedObjectContext.executeFetchRequest(fetchRequest, error: nil) as? [TweetDetails]{
-            let tweet = tweetDetails[0] as TweetDetails?
+        do{
+
+            if let tweetDetails =  try managedObjectContext.executeFetchRequest(fetchRequest) as? [TweetDetails]{
+            _ = tweetDetails[0] as TweetDetails?
             self.descriptionTextView.text = tweetDetails[0].tweetDescription
             self.tweetTextView.text = tweetDetails[0].tweet
             self.tweetDetailsTitle.text = NSString(format: "By %@, %@", name,tweetDetails[0].createdAt!) as String
@@ -55,7 +56,7 @@ class TwitterDetailViewController: UIViewController {
                     {
                         dispatch_async(dispatch_get_main_queue(),{
                             
-                        self.tweetImage.image = UIImage(data: NSData(contentsOfURL: location)!)
+                        self.tweetImage.image = UIImage(data: NSData(contentsOfURL: location!)!)
                         self.busyIndecator.stopAnimating()
                         })
                     }
@@ -67,6 +68,10 @@ class TwitterDetailViewController: UIViewController {
             }
             
             
+        }
+        }catch let error as NSError {
+            // failure
+            print("Fetch failed: \(error.localizedDescription)")
         }
     }
 
